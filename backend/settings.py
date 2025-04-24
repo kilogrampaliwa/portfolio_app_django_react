@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 import dj_database_url
 from dotenv import load_dotenv
+import mimetypes
+mimetypes.add_type("application/javascript", ".js", True)
+
 load_dotenv()
 
 os.makedirs("/app/data", exist_ok=True)
@@ -146,3 +149,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+print("TEMPLATE DIRS:", TEMPLATES[0]['DIRS'])
