@@ -10,14 +10,15 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 index_view = never_cache(TemplateView.as_view(template_name="index.html"))
+print("index_view :", index_view)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include("backend.api_urls")),
-    static(settings.STATIC_URL, document_root=os.path.join(BASE_DIR, 'frontend/build/static'))
 ]
 
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(BASE_DIR, 'frontend/build/static'))
     urlpatterns += static('/images/', document_root=os.path.join(BASE_DIR, 'frontend/build/images'))
     urlpatterns += static('/gifs/', document_root=os.path.join(BASE_DIR, 'frontend/build/gifs'))
 
