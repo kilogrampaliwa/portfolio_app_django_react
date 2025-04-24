@@ -9,8 +9,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-index_view = never_cache(TemplateView.as_view(template_name="index.html"))
-print("index_view :", index_view)
+index_view = never_cache(TemplateView.as_view(template_name="/frontend/buildindex.html"))
 
 urlpatterns = [
     path('admin/', admin.site.urls),
