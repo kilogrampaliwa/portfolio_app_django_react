@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-(qy&4ec*lc*^c=a53zlbwp(+rk9vaqnv$03&%qx3^-4dxhj126
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"]  # lub bardziej konkretnie jeśli chcesz
+ALLOWED_HOSTS = ["*"] 
 
 
 
