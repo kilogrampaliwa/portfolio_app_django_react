@@ -14,15 +14,13 @@ index_view = never_cache(TemplateView.as_view(template_name="index.html"))
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include("backend.api_urls")),
+    static(settings.STATIC_URL, document_root=os.path.join(BASE_DIR, 'frontend/build/static'))
 ]
 
-# Serwowanie statycznych tylko w DEBUG
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(BASE_DIR, 'frontend/build/static'))
     urlpatterns += static('/images/', document_root=os.path.join(BASE_DIR, 'frontend/build/images'))
     urlpatterns += static('/gifs/', document_root=os.path.join(BASE_DIR, 'frontend/build/gifs'))
 
-# <- To dopisz NA KOŃCU
 urlpatterns += [
 #urlpatterns += [
 #    re_path(r'^(?!favicon\.ico$).*$', index_view),
