@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include, re_path 
+from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 from django.views.decorators.cache import never_cache
 from django.conf import settings
@@ -14,7 +14,6 @@ index_view = never_cache(TemplateView.as_view(template_name="index.html"))
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include("backend.api_urls")),
-    path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico')),
 ]
 
 # Serwowanie statycznych tylko w DEBUG
@@ -25,5 +24,7 @@ if settings.DEBUG:
 
 # <- To dopisz NA KOŃCU
 urlpatterns += [
-    re_path(r'^.*$', index_view),
+#urlpatterns += [
+#    re_path(r'^(?!favicon\.ico$).*$', index_view),
+#]
 ]
