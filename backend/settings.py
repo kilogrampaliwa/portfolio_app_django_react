@@ -36,7 +36,7 @@ SECRET_KEY = 'django-insecure-(qy&4ec*lc*^c=a53zlbwp(+rk9vaqnv$03&%qx3^-4dxhj126
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"] 
+ALLOWED_HOSTS = ["*"]
 
 
 
@@ -74,7 +74,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'frontend/build')],
+        'DIRS': [os.path.join(BASE_DIR, '/portfolio_app_django_react/frontend/build')],
         'APP_DIRS': True,
                 'OPTIONS': {
             'context_processors': [
