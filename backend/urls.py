@@ -9,10 +9,11 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-index_view = never_cache(TemplateView.as_view(template_name="/frontend/buildindex.html"))
+index_view = never_cache(TemplateView.as_view(template_name="index.html"))
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("api/", include("backend.api_urls")),
     path("api/", include("backend.api_urls")),
 ]
 
@@ -21,8 +22,8 @@ if settings.DEBUG:
     urlpatterns += static('/images/', document_root=os.path.join(BASE_DIR, 'frontend/build/images'))
     urlpatterns += static('/gifs/', document_root=os.path.join(BASE_DIR, 'frontend/build/gifs'))
 
+
 urlpatterns += [
-#urlpatterns += [
-#    re_path(r'^(?!favicon\.ico$).*$', index_view),
-#]
+    re_path(r'^(?!favicon\.ico$).*$', index_view),
 ]
+
