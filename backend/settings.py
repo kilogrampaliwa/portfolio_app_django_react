@@ -150,3 +150,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 print("TEMPLATE DIRS:", TEMPLATES[0]['DIRS'])
+
+
+CSRF_TRUSTED_ORIGINS = ["https://portfolioappdjangoreact-production.up.railway.app"]
