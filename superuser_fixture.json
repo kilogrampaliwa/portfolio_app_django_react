@@ -1,0 +1,21 @@
+TEMPLATE DIRS: ['C:\\react_z_yt\\react_18_tut\\backend_git\\portfolio_app_django_react\\frontend\\build']
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$YOmPsAseMoXahfaZvU53Z8$e1/HVM6JlAfR5myhdyqv0ezCBUt5c90ap7hauvG393c=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "mainAdmin",
+    "first_name": "",
+    "last_name": "",
+    "email": "filip.ciader@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-04-25T09:26:28.524Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
